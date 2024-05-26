@@ -1,0 +1,16 @@
+predicates
+
+graph(symbol,symbol)
+
+run
+
+clauses
+
+graph(a,b).
+graph(c,d).
+graph(a,d).
+run.
+
+goal
+run.
+graph(c,X).

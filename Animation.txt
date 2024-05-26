@@ -1,0 +1,11 @@
+predicates
+    parent(string, string)
+    grandparent(symbol, symbol)
+    run
+clauses
+     parent("Liam", "Mia").
+     run.
+     grandparent(X,Z) :- parent(X,Y),parent(Y,Z).
+goal
+
+run

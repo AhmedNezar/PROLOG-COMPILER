@@ -1,0 +1,26 @@
+predicates
+    graph(symbol,symbol,integer,real)
+    parent(string, string)
+    grandparent(symbol, symbol)
+    graph(integer,integer)
+    run
+    start
+
+clauses
+     parent("Liam", "Mia").
+     parent("Ethan", "Liam").
+     parent("Emma", "Liam"
+     graph(10,11).
+     run.
+     grandparent(X,Z) :- parent(X,Y),parent(Y,Z).
+
+ start:- write("input a= "),readint(A),
+                        write("input b= "),readint(B),
+                        write("input c= "),readint(C),
+                        A >= 0,B >= 0,C >= 0,
+                        A < B+C,B < C+A,C < A+B, 
+                        write("These numbers are the edges of a triangle.").
+
+goal
+
+run

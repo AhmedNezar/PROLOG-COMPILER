@@ -1,0 +1,32 @@
+Grammar:
+
+program -> predicates clauses goal
+predicates-> predicate predicates | ε
+predicate -> predicate_name '(' data_types ')' | predicate_name
+data_types -> data_type data_types_tail
+data_types_tail -> ',' data_type data_types_tail | ε
+data_type -> 'integer' | 'symbol' | 'char' | 'real'| 'string'
+clauses -> clause clauses | ε
+clause -> fact | rule '.'
+fact -> predicate_name '(' parameters_values ')'
+parameters_values -> parameter_value parameters_values_tail
+parameters_values_tail -> ',' parameter_value parameters_values_tail | ε
+parameter_value -> string | integer | char | symbol | real
+rule -> head ':-' body
+head -> predicate_name '(' values ')' 
+values -> value values_tail
+values_tail -> ',' value values_tail | ε
+variable -> uppercase_string
+body -> predicate body_tail |  comparison body_tail |  input_predicate body_tail | output_predicate body_tail |  ε
+body_tail -> ',' body | ';' body | ε
+comparison -> expression comparator expression
+expression -> value expression_tail | '(' expression ')' expression_tail 
+expression_tail -> operator expression expression_tail | ε
+operator -> '+' | '-' | '*' | '/'
+comparator -> '<' | '<=' | '>' | '>=' | '=' | '<>'
+input_predicate-> 'readln' '(' variable ')'| 'readint' '(' variable ')'| 'readchar' '(' variable ')' 
+output_predicate -> 'write' '(' output_values ')'
+output_values -> output_value output_values_tail
+output_values_tail -> ',' output_values | ε
+output_value -> integer_variable | string
+goal -> predicate_name'('values')''.'
