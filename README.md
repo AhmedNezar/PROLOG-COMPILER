@@ -1,2 +1,2 @@
 # PROLOG-COMPILER
-Lexical and Syntax Analysis for PROLOG-like Language
+This repository contains a project for implementing a lexical and syntax analyzer for a subset of the PROLOG programming language. The project involves designing and developing a scanner (lexical analyzer) and a parser (syntax analyzer) based on the specified grammar and language rules. Additionally, the project includes a graphical user interface (GUI) to visualize the DFA (Deterministic Finite Automaton) for valid tokens and the parse tree.
